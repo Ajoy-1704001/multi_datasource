@@ -1,0 +1,42 @@
+package com.deb.multi_datasource.model.mongodb;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Map;
+
+@Document(collection = "products")
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Product {
+
+    @Id
+    private String id;
+    
+    private String name;
+    
+    private String description;
+    
+    private String sku;
+    
+    private BigDecimal price;
+    
+    private int stockQuantity;
+    
+    private List<String> categories;
+    
+    private Map<String, String> attributes;
+    
+    private List<String> imageUrls;
+    
+    private ProductDetails details;
+    
+}
